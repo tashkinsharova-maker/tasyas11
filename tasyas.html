@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Герои "Моя геройская академия"</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fafaff; margin: 0; padding: 30px;}
+        h1 { text-align: center; color: #203040;}
+        .slideshow-container { max-width: 400px; margin: auto; position: relative; }
+        .slide { display: none; text-align: center;}
+        .slide img { max-width: 350px; border-radius: 12px; }
+        .hero { font-size: 1.2em; margin: 10px 0 20px 0;}
+        .btns { text-align:center; margin: 20px; }
+        .btns button { padding: 8px 18px; margin: 0 5px; font-size:1em; background:#304080;color:#fff; border:none; border-radius:5px; cursor:pointer;}
+        .btns button:hover {background:#4060b4;}
+    </style>
+</head>
+<body>
+    <h1>Герои "Моя геройская академия"</h1>
+    <ol>
+        <li>Изуку Мидория (Deku)</li>
+        <li>Кацки Бакуго</li>
+        <li>Тодороки Шото</li>
+    </ol>
+
+    <!-- Картинки всех трёх героев под оглавлением -->
+    <div style="text-align:center; margin: 20px 0 30px 0;">
+        <img src="https://i.pinimg.com/736x/ad/b3/f6/adb3f6cbe9949177e3fa473679659ed2.jpg" alt="Изуку Мидория" title="Изуку Мидория" style="max-width:140px; margin: 0 15px;">
+        <img src="https://i.pinimg.com/736x/1a/54/36/1a5436be201f74019d570e7e07301162.jpg" alt="Кацки Бакуго" title="Кацки Бакуго" style="max-width:140px; margin: 0 15px;">
+        <img src="https://i.pinimg.com/736x/ae/ca/65/aeca65ffcc512c3c3f777824e811e7e4.jpg" alt="Тодороки Шото" title="Тодороки Шото" style="max-width:140px; margin: 0 15px;">
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slide" style="display:block">
+            <h2>Изуку Мидория (Deku)</h2>
+            <img src="https://i.pinimg.com/736x/ad/b3/f6/adb3f6cbe9949177e3fa473679659ed2.jpg" alt="Изуку Мидория">
+            <div class="hero">
+                Главный герой, наследник силы «One For All». Усиляет свои способности и мечтает стать героем номер один.
+            </div>
+        </div>
+        <div class="slide">
+            <h2>Кацки Бакуго</h2>
+            <img src="https://i.pinimg.com/736x/1a/54/36/1a5436be201f74019d570e7e07301162.jpg" alt="Кацки Бакуго">
+            <div class="hero">
+                Взрывной и дерзкий одноклассник Деку, использует взрывы благодаря уникальной особенности.
+            </div>
+        </div>
+        <div class="slide">
+            <h2>Тодороки Шото</h2>
+            <img src="https://i.pinimg.com/736x/ae/ca/65/aeca65ffcc512c3c3f777824e811e7e4.jpg" alt="Тодороки Шото">
+            <div class="hero">
+                Обладает силой льда и огня. Стремится превзойти своего отца и стать сильным героем.
+            </div>
+        </div>
+        <div class="btns">
+            <button onclick="changeSlide(-1)">Назад</button>
+            <button onclick="changeSlide(1)">Вперёд</button>
+        </div>
+    </div>
+
+    <script>
+        // Слайдер
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n){
+            slides[slideIndex].style.display = 'none';
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            slides[slideIndex].style.display = 'block';
+        }
+        function changeSlide(n){
+            showSlide(n);
+        }
+    </script>
+</body>
+</html>
